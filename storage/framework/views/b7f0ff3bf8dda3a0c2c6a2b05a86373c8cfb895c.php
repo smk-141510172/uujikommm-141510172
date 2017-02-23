@@ -3,7 +3,7 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <h1><center>Daftar Lembur Pegawai</center></h1>
-<center><a  href="<?php echo e(url('lemburp/create')); ?>" class="btn btn-success">Add</center></a>
+<center><a  href="<?php echo e(url('lemburp/create')); ?>" class="btn btn-success"><span class="fa fa-plus-circle"></span><br>Tambah</center></a>
 <hr></hr>
 	<table border="1" class="table table-striped table-bordered table-hover">
 		<thead>

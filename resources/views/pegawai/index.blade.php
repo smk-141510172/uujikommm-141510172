@@ -80,7 +80,7 @@
 			                </div>
 			            </div>
 			        </div>
-					<a  href="{{url('pegawai/create')}}" class="btn btn-success form-control">Add</a>
+					<a  href="{{url('pegawai/create')}}" class="btn btn-success form-control">Tambah</a>
 	
 
 @endsection

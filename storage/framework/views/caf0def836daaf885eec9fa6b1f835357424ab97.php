@@ -66,6 +66,19 @@
                         </div>
                         <hr>
                         </hr>
+                        <div class="form-group<?php echo e($errors->has('besar_uang') ? ' has-error' : ''); ?>">
+                            <label for="besar_uang" class="col-md-4 control-label">Kode Kategori</label>
+
+                            <div class="col-md-6">
+                                <?php echo Form::text('besar_uang',null,['class'=>'form-control']); ?>
+
+                                <?php if($errors->has('besar_uang')): ?>
+                                    <span class="help-block">
+                                        <strong><?php echo e($errors->first('besar_uang')); ?></strong>
+                                    </span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
 
                         <div class="form-group">
 						<?php echo Form::submit('Save',['class'=>'btn btn-success form-control']); ?>
@@ -80,4 +93,4 @@
 </div>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.appp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

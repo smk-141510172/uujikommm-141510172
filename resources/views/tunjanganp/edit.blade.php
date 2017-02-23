@@ -1,4 +1,7 @@
 @extends('layouts.appp')
+@section('tunjanganp')
+    active
+@endsection
 @section('content')
 <h1><center>Edit Tunjangan</center></h1>
 	<div class="container">

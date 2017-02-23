@@ -139,7 +139,7 @@
                     <p>Program ini dibuat saat UJIKOM Di SMK ASSALAAM BANDUNG,UJIKOM adalah salah satu kegiatan atau syarat kelulusan bagi siswa SMK.Uji Kompetensi atau UJIKOM juga akan berbeda jika sekolah tersebut memiliki Kejuruan yang berbeda.Karena Kami Adalah Jurusan RPL jadi kami ditugaskan wajib Membuat Program Atau aplikasi,Dan Saat ini Murid Smk Assalaam Ditugaskan untuk membuat Aplikasi Penggajian.</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Aplikasi Yang Kami buat Berbasis Website Dengan Framework Laravel,Kenapa sekolah kami menggunakan Laravel?? karena menurut JOHN SMITH BAHWA"SAAT INI HAMPIR 89% PROGRAMMER DI DUNIA MEMBUAT PROGRAM WEBSITE MENGGUNAKAN FRAMEWORK LARAVEL"Oleh karena Itu sekolah Kami Menggunakan LARAVEL Sebagai Framework Program kami</p>
+                    <p>Aplikasi Yang Kami buat Berbasis Website Dengan Framework Laravel,Kenapa sekolah kami menggunakan Laravel?? karena menurut JOHN SMITH BAHWA"SAAT INI HAMPIR 89% PROGRAMMER DI DUNIA MEMBUAT PROGRAM WEBSITE MENGGUNAKAN FRAMEWORK LARAVEL"Oleh karena Itu sekolah Kami Menggunakan LARAVEL Sebagai Framework Program kami.</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">

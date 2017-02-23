@@ -82,7 +82,7 @@
 			                </div>
 			            </div>
 			        </div>
-					<a  href="<?php echo e(url('pegawai/create')); ?>" class="btn btn-success form-control">Add</a>
+					<a  href="<?php echo e(url('pegawai/create')); ?>" class="btn btn-success form-control">Tambah</a>
 	
 
 <?php $__env->stopSection(); ?>

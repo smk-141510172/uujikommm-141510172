@@ -8,7 +8,7 @@
                 <div class="panel-heading"></div>
                 <div class="panel-body">
                 <h1><center>Daftar Jabatan</center></h1>
-<center><a  href="{{url('jabatan/create')}}" class="btn btn-success">Add</a></center>
+<center><a  href="{{url('jabatan/create')}}" class="btn btn-success"><span class="fa fa-plus-circle"></span><br>Tambah</a></center>
 <hr>
 </hr>
 	<table border="1" class="table table-striped table-bordered table-hover">
@@ -28,7 +28,7 @@
 				<td>{{$no++}}</td>
 				<td>{{$data->kode_j}}</td>
 				<td>{{$data->nama_j}}</td>
-				<td>{{$data->besar_uang}}</td>
+				<td><?php echo 'RP.'.number_format($data->besar_uang,2,",",".");?></td>
 				<td>
 					<a href="{{route('jabatan.edit',$data->id)}}" class='btn btn-warning'> Edit </a>
 				</td>

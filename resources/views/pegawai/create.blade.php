@@ -32,8 +32,8 @@
                                     <option value="">Pilih</option>
                                     <option value="Admin">Admin</option>
                                     <option value="HRD">HRD</option>
-                                    <option value="Bagian Keuangan">Bagian Keuangan</option>
-                                    <option value="Karyawan">Karyawan</option>
+                                    <option value="Bendahara">Bagian Keuangan</option>
+                                    <option value="Pegawai">Pegawai</option>
                                 </select>
                                 @if ($errors->has('type_user'))
                                     <span class="help-block">

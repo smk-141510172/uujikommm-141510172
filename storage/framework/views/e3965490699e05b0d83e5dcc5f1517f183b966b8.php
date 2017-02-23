@@ -6,7 +6,7 @@
                 <div class="panel-heading"></div>
                 <div class="panel-body">
                 <h1><center>Daftar Golongan</center></h1>
-               <center> <a  href="<?php echo e(url('golongan/create')); ?>" class="btn btn-success">Add</a> </center>
+               <center> <a  href="<?php echo e(url('golongan/create')); ?>" class="btn btn-success"><span class="fa fa-plus-circle"></span><br>Tambah</a> </center>
                 <hr>
                 </hr>
 	<table border="1" class="table table-striped table-bordered table-hover">
@@ -26,7 +26,7 @@
 				<td><?php echo e($no++); ?></td>
 				<td><?php echo e($data->kode_g); ?></td>
 				<td><?php echo e($data->nama_g); ?></td>
-				<td><?php echo e($data->besar_uang); ?></td>
+				<td><?php echo 'RP.'.number_format($data->besar_uang,2,",",".");?></td>
 				<td>
 					<a href="<?php echo e(route('golongan.edit',$data->id)); ?>" class='btn btn-warning'> Edit </a>
 				</td>

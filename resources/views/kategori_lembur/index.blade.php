@@ -23,7 +23,7 @@
 				<td>{{$data->kode_l}}</td>
 				<td>{{$data->golongan->nama_g}}</td>
 				<td>{{$data->jabatan->nama_j}}</td>
-				<td>{{$data->besar_uang}}</td>
+				<td><?php echo 'RP.'.number_format($data->besar_uang,2,",",".");?></td>
 				<td>
 					<a href="{{route('kategori.edit',$data->id)}}" class='btn btn-warning'> Edit </a>
 				</td>
@@ -36,6 +36,6 @@
 			@endforeach
 		</tbody>
 	</table>
-	<a  href="{{url('kategori/create')}}" class="btn btn-success form-control">Add</a>
+	<a  href="{{url('kategori/create')}}" class="btn btn-success form-control">Tambah</a>
 
 @endsection

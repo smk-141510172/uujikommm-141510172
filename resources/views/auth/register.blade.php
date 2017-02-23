@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appp')
 
 @section('content')
 <div class="container">
@@ -27,8 +27,12 @@
                             <label for="type_user" class="col-md-4 control-label">type_user</label>
 
                             <div class="col-md-6">
-                                <input id="type_user" type="text" class="form-control" name="type_user" value="{{ old('type_user') }}" required autofocus>
-
+                                <select id="type_user" class="form-control" name="type_user" value="{{ old('type_user') }}"  autofocus>
+                                    <option value="">Pilih</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="HRD">HRD</option>
+                                    <option value="Bendahara">Bagian Keuangan</option>
+                                </select>
                                 @if ($errors->has('type_user'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('type_user') }}</strong>
@@ -72,14 +76,15 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-
-                        <div class="form-group">
+                          <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
                             </div>
                         </div>
+
+                      
                     </form>
                 </div>
             </div>

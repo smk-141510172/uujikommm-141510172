@@ -26,8 +26,12 @@
                             <label for="type_user" class="col-md-4 control-label">type_user</label>
 
                             <div class="col-md-6">
-                                <input id="type_user" type="text" class="form-control" name="type_user" value="<?php echo e(old('type_user')); ?>" required autofocus>
-
+                                <select id="type_user" class="form-control" name="type_user" value="<?php echo e(old('type_user')); ?>"  autofocus>
+                                    <option value="">Pilih</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="HRD">HRD</option>
+                                    <option value="Bendahara">Bagian Keuangan</option>
+                                </select>
                                 <?php if($errors->has('type_user')): ?>
                                     <span class="help-block">
                                         <strong><?php echo e($errors->first('type_user')); ?></strong>
@@ -71,14 +75,15 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-
-                        <div class="form-group">
+                          <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
                             </div>
                         </div>
+
+                      
                     </form>
                 </div>
             </div>
@@ -87,4 +92,4 @@
 </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.appp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

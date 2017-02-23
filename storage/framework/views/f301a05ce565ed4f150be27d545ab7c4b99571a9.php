@@ -1,3 +1,6 @@
+<?php $__env->startSection('tunjangan'); ?>
+    active
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <h1><center>Daftar Kategori Tunjangan</center></h1>
 	<table border="1" class="table table-striped table-border table-hover">
@@ -21,7 +24,7 @@
 				<td><?php echo e($data->kode_t); ?></td>
 				<td><?php echo e($data->golongan->nama_g); ?></td>
 				<td><?php echo e($data->jabatan->nama_j); ?></td>
-				<td><?php echo e($data->besar_uang); ?></td>
+				<td><?php echo 'RP.'.number_format($data->besar_uang,2,",",".");?></td>
 				<td><?php echo e($data->status); ?></td>
 				<td><?php echo e($data->jumlah_anak); ?></td>
 				<td>
@@ -39,7 +42,7 @@
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
 		</tbody>
 	</table>
-	<a  href="<?php echo e(url('tunjangan/create')); ?>" class="btn btn-success form-control">Add</a>
+	<a  href="<?php echo e(url('tunjangan/create')); ?>" class="btn btn-success form-control">Tambah</a>
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.appp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

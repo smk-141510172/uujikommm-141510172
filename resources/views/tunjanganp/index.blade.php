@@ -1,4 +1,7 @@
 @extends('layouts.appp')
+@section('tunjanganp')
+    active
+@endsection
 @section('content')
 <h1><center>Daftar Tunjangan Pegawai</center></h1>
 	<table border="1" class="table table-striped table-border table-hover">
@@ -29,6 +32,6 @@
 			@endforeach
 		</tbody>
 	</table>
-	<a  href="{{url('tunjanganp/create')}}" class="btn btn-success form-control">Add</a>
+	<a  href="{{url('tunjanganp/create')}}" class="btn btn-success form-control">Tambah</a>
 
 @endsection

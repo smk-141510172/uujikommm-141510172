@@ -3,188 +3,67 @@
     active
 @endsection
 @section('content')
-<h1><center>Pencarian Menurut Pegawai</center></h1>
- <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-success">
+<div class="panel panel-success">
                 <div class="panel-heading"></div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" action="{{ url('query') }}" method="GET"">
-                        {{ csrf_field() }}
-
-                        
-
-                        <div class="form-group{{ $errors->has('q') ? ' has-error' : '' }}">
-                            <label for="q" class="col-md-4 control-label">Pegawai</label>
-
-                            <div class="col-md-6">
-                                <select name="q" class="form-control">
-                                    <option value="">pilih</option>
-                                    @foreach($pegawai as $data)
-                                    <option value="{{$data->id}}">{{$data->nip}}{{$data->user->name}}</option>
-                                    @endforeach
-                                </select>
-
-                                @if ($errors->has('q'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('q') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                       
-                        
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-success form-control">
-                                    Cari
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-@endsection
- 						
-@section('content1')
-<h1><center>Data Penggajian</center></h1>
-				<div class="col-md-15 col-md-offset-0">
-                    <div class="panel panel-success">
-                        <div class="panel-body">
-        <div class="col-md-15 col-md-offset-0">
-            <div class="panel panel-success">
-			    <div class="panel-heading"></div>
-	                <div class="panel-body">
-				        
-				        <table border="2" class="table table-success table-border table-hover">
-										<thead >
-											<tr>
-												<th>No</th>
-												<th>Pegawai</th>
-												<th>Jumlah Uang Tunjangan</th>
-												<th>Jumlah Jam Lembur</th>
-												<th>Jumlah Uang Lembur</th>
-												<th>gaji Pokok</th>
-												<th>Total Gaji</th>
-												<th>Tanggal Pengambilan</th>
-												<th>Status Pengambilan</th>
-												<th>Petugas Penerimaan</th>
-											</tr>
-										</thead>
-										@php $no=1;   @endphp
-										<tbody>
-											@foreach($pegawai as $data)
-											<tr>
-												<td>{{$no++}}</td>
-												<td>{{$data->user->name}}</td>
-												<td>
-												@foreach($tunjangan as $data1)
-													
-													@if($data1->pegawai_id == $data->id)
-														{{$data1->tunjangan->besar_uang}}
-														@php $a=$data1->tunjangan->besar_uang; ; @endphp
-													@endif
-
-												@endforeach
-												</td>
-												<td>
-													
-												@foreach($lemburp as $data2)
-													@if($data2->pegawai_id == $data->id)
-														{{$data2->Jumlah_jam}}
-														@php $b=$data2->Jumlah_jam*$data2->kategori->besar_uang; @endphp
-
-													@endif
-												@endforeach
-												</td>
-												<td>
-													
-												@foreach($lemburp as $data2)
-													@if($data2->pegawai_id == $data->id)
-														{{$data2->Jumlah_jam*$data2->kategori->besar_uang}}
-														@php $b=$data2->Jumlah_jam*$data2->kategori->besar_uang; @endphp
-
-													@endif
-												@endforeach
-												</td>
-												<td>{{$data->golongan->besar_uang+$data->jabatan->besar_uang}}</td>
-												@php $c=$data->golongan->besar_uang+$data->jabatan->besar_uang; @endphp
-
-												<td>{{$a + $b + $c}}</td>
-												<td>
-													
-												@foreach($tunjangan as $data1 )
-													
-													@foreach($penggajian as $data3)
-														@if($data3->tunjangan_pegawai_id == $data1->id && $data1->pegawai->id == $data->id )  
-															{{$data3->status_pengambilan}}
-														@elseif($data3->tunjangan_pegawai_id != $data1->id && $data1->pegawai->id != $data->id )
-														
-														@elseif($data3->tunjangan_pegawai_id == $data1->id && $data1->pegawai->id != $data->id )
-															
-														@else
-														Telah diambil
-														@endif
-												@endforeach
-												@endforeach
-												</td>
-												<td>@foreach($tunjangan as $data1 )
-													@foreach($penggajian as $data3)
-														@if($data3->tunjangan_pegawai_id == $data1->id && $data1->pegawai->id == $data->id )  
-															{{$data3->status_pengambilan}}
-														@elseif($data3->tunjangan_pegawai_id != $data1->id && $data1->pegawai->id != $data->id )
-														
-														@elseif($data3->tunjangan_pegawai_id == $data1->id && $data1->pegawai->id != $data->id )
-															
-														@else
-														Belum diambil
-														<form class="form-horizontal" role="form" method="POST" action="{{ url('/penggajian') }}">
-							                        {{ csrf_field() }}
-							                        	@foreach($tunjangan as $data1)
-															@if($data1->pegawai_id == $data->id)
-									                        	<input type="hidden" name="tunjangan_pegawai_id" value="{{$data1->id}}">
-																@php $a=$data1->tunjangan->besar_uang; ; @endphp
-															@endif
-														@endforeach
-							                        	@foreach($lemburp as $data2)
-															@if($data2->pegawai_id == $data->id)
-																<input type="hidden" name="jumlah_jam_lembur" value="{{$data2->Jumlah_jam}}">
-																<input type="hidden" name="jumlah_uang_lembur" value="{{$data2->Jumlah_jam*$data2->kategori->besar_uang}}">
-															@endif
-														@endforeach
-														<input type="hidden" name="gaji_pokok" value="{{$data->golongan->besar_uang+$data->jabatan->besar_uang}}">
-							                        <input type="hidden" name="tanggal_pengambilan" value="{{date('Y-m-d')}}" >
-							                        <input type="hidden" name="status_pengambilan" value="1" >
-							                       <input type="hidden" name="petugas_penerima" value="Bagian Keuangan">
-							                        <div class="form-group">
-							                            <div class="col-md-10 col-md-offset-0">
-							                                <button type="submit" class="btn btn-success form-control">
-							                                    Ambil
-							                                </button>
-							                            </div>
-							                        </div>
-							                    </form>
-														@endif
-														@endforeach
-													@endforeach
-
-													
-												</td>
-												<td>Bagian Keuangan</td>
-											</tr>
-											@endforeach
-										</tbody>
-									</table>
-				                </div>
-				            </div>
-				        </div>
-	        		</div>
-        	</div>
-        </div>
-
- 						</div>
+<h1><center>Penggajian</center></h1>
+<div class="col-md-12">
+                        <center><a href="{{url('penggajian/create')}}" class="btn btn-success"><span class="fa fa-plus-circle"></span><br>Tambah</a></center>
+                        <br>
+                        <br>
+                        <center>{{$penggajian->links()}}</center>
                     </div>
+                    <table class="table table-striped table-hover table-bordered">
+
+                        <thead>
+                        <tr class="bg-success">
+                        <th>no</th>
+                        <th>nama pegawai</th>
+                        <th>nip pegawai</th> 
+                        <th>status pengambilan</th>
+                        <th colspan="3">Opsi</th>
+                        </tr>
+                        </thead>
+
+                        @php
+                            $no=1 ;
+                        @endphp
+                        <tbody>
+                        @foreach($penggajian as $penggajian)
+                        <tr>
+                        <td>{{$no++}}</td>                        
+                        <td>{{$penggajian->Tunjangan_pegawai->Pegawai->User->name}}</td>
+                        <td>{{$penggajian->Tunjangan_pegawai->Pegawai->nip}}</td>
+                        <td><b>@if($penggajian->tanggal_pengambilan == ""&&$penggajian->status_pengambilan == "0")
+                            Gaji Belum Diambil
+                        @elseif($penggajian->tanggal_pengambilan == ""||$penggajian->status_pengambilan == "0")
+                            Gaji Belum Diambil
+                        @else
+                            Gaji Sudah Diambil Pada {{$penggajian->tanggal_pengambilan}}
+                        @endif</b></td>
+
+
+                        </h5>
+
+                        
+                                <td><a class="btn btn-primary form-control" href="{{route('penggajian.show',$penggajian->id)}}">Detail</a></td>
+                                     <td>{!!Form::open(['method'=>'DELETE','route'=>['penggajian.destroy',$penggajian->id]])!!}
+                                    {!!Form::submit('Delete',['class'=>'btn btn-danger col-md-12'])!!}</td>
+
+                                    {!!Form::close()!!}
+                                
+                        </center>
+                        </tr>
+                        </div> 
+                        @endforeach
+                        
+                    </table>
                 </div>
+                </div>
+
+
+            </div>
+            </div>
+            </div>
+
 @endsection

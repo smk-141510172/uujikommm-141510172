@@ -64,6 +64,18 @@
                         </div>
                         <hr>
                         </hr>
+                        <div class="form-group{{ $errors->has('besar_uang') ? ' has-error' : '' }}">
+                            <label for="besar_uang" class="col-md-4 control-label">Kode Kategori</label>
+
+                            <div class="col-md-6">
+                                {!! Form::text('besar_uang',null,['class'=>'form-control']) !!}
+                                @if ($errors->has('besar_uang'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('besar_uang') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group">
 						{!! Form::submit('Save',['class'=>'btn btn-success form-control']) !!}

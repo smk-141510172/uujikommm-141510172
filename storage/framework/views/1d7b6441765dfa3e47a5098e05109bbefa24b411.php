@@ -22,7 +22,7 @@
 				<td><?php echo e($data->kode_l); ?></td>
 				<td><?php echo e($data->golongan->nama_g); ?></td>
 				<td><?php echo e($data->jabatan->nama_j); ?></td>
-				<td><?php echo e($data->besar_uang); ?></td>
+				<td><?php echo 'RP.'.number_format($data->besar_uang,2,",",".");?></td>
 				<td>
 					<a href="<?php echo e(route('kategori.edit',$data->id)); ?>" class='btn btn-warning'> Edit </a>
 				</td>
@@ -38,7 +38,7 @@
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
 		</tbody>
 	</table>
-	<a  href="<?php echo e(url('kategori/create')); ?>" class="btn btn-success form-control">Add</a>
+	<a  href="<?php echo e(url('kategori/create')); ?>" class="btn btn-success form-control">Tambah</a>
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.appp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

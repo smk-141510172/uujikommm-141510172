@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <h1><center>Daftar Lembur Pegawai</center></h1>
-<center><a  href="{{url('lemburp/create')}}" class="btn btn-success">Add</center></a>
+<center><a  href="{{url('lemburp/create')}}" class="btn btn-success"><span class="fa fa-plus-circle"></span><br>Tambah</center></a>
 <hr></hr>
 	<table border="1" class="table table-striped table-bordered table-hover">
 		<thead>

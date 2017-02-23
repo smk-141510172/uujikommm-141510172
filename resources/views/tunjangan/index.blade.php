@@ -1,4 +1,7 @@
 @extends('layouts.appp')
+@section('tunjangan')
+    active
+@endsection
 @section('content')
 <h1><center>Daftar Kategori Tunjangan</center></h1>
 	<table border="1" class="table table-striped table-border table-hover">
@@ -22,7 +25,7 @@
 				<td>{{$data->kode_t}}</td>
 				<td>{{$data->golongan->nama_g}}</td>
 				<td>{{$data->jabatan->nama_j}}</td>
-				<td>{{$data->besar_uang}}</td>
+				<td><?php echo 'RP.'.number_format($data->besar_uang,2,",",".");?></td>
 				<td>{{$data->status}}</td>
 				<td>{{$data->jumlah_anak}}</td>
 				<td>
@@ -37,6 +40,6 @@
 			@endforeach
 		</tbody>
 	</table>
-	<a  href="{{url('tunjangan/create')}}" class="btn btn-success form-control">Add</a>
+	<a  href="{{url('tunjangan/create')}}" class="btn btn-success form-control">Tambah</a>
 
 @endsection
