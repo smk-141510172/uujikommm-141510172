@@ -18,11 +18,9 @@
 			@foreach($tunjanganp as $data)
 			<tr>
 				<td>{{$no++}}</td>
-				<td>{{$data->kode_tunjangan_id}}</td>
+				<td>{{$data->Tunjangan->kode_t}}</td>
 				<td>{{$data->pegawai->user->name}}</td>
-				<td>
-					<a href="{{route('tunjanganp.edit',$data->id)}}" class='btn btn-warning'> Edit </a>
-				</td>
+				
 				<td>
 					{!! Form::open(['method'=>'DELETE','route'=>['tunjanganp.destroy',$data->id]]) !!}
 					{!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}

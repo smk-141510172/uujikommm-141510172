@@ -34,10 +34,10 @@ class PenggajianController extends Controller
         $tunjangan=Tunjangan_pegawai::all();
         return view('penggajian.index',compact('penggajian','pegawai','lemburp','tunjangan'));*/
         $penggajian=Penggajian::paginate(3);
-        return view('penggajian.index',compact('penggajian'));
+        $pegawai=Pegawai::all();
+        return view('penggajian.index',compact('penggajian','pegawai'));
     }
-
-     public function search(Request $request)
+    public function search(Request $request)
     {
         $query = Request::get('q');
         $pegawai = Pegawai::where('id', 'LIKE', '%' . $query . '%')->paginate(10);
@@ -47,6 +47,9 @@ class PenggajianController extends Controller
         $tunjangan=Tunjangan_pegawai::all();
         return view('penggajian.result', compact('penggajian','pegawai','pegawaii','lemburp','tunjangan', 'query'));
     }
+
+
+   
 
     /**
      * Show the form for creating a new resource.

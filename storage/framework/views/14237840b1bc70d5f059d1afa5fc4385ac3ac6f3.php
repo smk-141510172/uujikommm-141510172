@@ -98,11 +98,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <span class="name">PERINGATAN</span>
+                        <span class="name" " glyphicon glyphicon-home" >Home</span>
                         <hr class="star-light">
-                        <span class="skills">THIS HOME APLLICATION</span>
+                        <span class="skills"><p><h1>Hi&nbsp,&nbsp<?php echo e(Auth::user()->name); ?></p><br>
+                        <p>Sebagai&nbsp,&nbsp<?php echo e(Auth::user()->type_user); ?></h1></p></span>
                         <hr class="star-light">
-                        <span class="skills">HANYA ADMIN YANG BISA MENGAKSES SEMUA DATA</span>
+                        <span class="name">PERINGATAN!!</span>
+                        <span class="skills">Hanya ADMIN Yang Bisa Mengakses Semua Data!!</span>
                     </div>
                 </div>
             </div>

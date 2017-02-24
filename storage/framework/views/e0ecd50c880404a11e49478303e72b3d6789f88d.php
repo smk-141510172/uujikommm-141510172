@@ -24,8 +24,7 @@
                         <br>
                         <h2>Perhitungan Gaji Keseluruhan&nbsp:</h2>
                         <br>
-                        <h5>Gaji Lembur&nbsp&nbsp: Rp.<?php echo e($penggajian->jumlah_uang_lembur); ?> <hr>Gaji Pokok&nbsp&nbsp&nbsp&nbsp: Rp.<?php echo e($penggajian->gaji_pokok); ?><hr>Tunjangan&nbsp&nbsp: Rp.<?php echo e($penggajian->Tunjangan_pegawai->Tunjangan->besar_uang); ?> <hr>Total Gaji&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: Rp.<?php echo e($penggajian->total_gaji); ?>
-
+                        <h5>Gaji Lembur&nbsp&nbsp: <?php echo 'RP.'.number_format($penggajian->jumlah_uang_lembur,2,",",".");?> <hr>Gaji Pokok&nbsp&nbsp&nbsp&nbsp: <?php echo 'RP.'.number_format($penggajian->gaji_pokok,2,",",".");?><hr>Tunjangan&nbsp&nbsp: <?php echo 'RP.'.number_format($penggajian->Tunjangan_pegawai->Tunjangan->besar_uang,2,",",".");?><hr>Total Gaji&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <?php echo 'RP.'.number_format($penggajian->total_gaji,2,",",".");?>
 
 
 

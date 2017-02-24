@@ -1,3 +1,6 @@
+<?php $__env->startSection('tunjanganp'); ?>
+    active
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <h1><center>Edit Tunjangan</center></h1>
 	<div class="container">
@@ -28,24 +31,7 @@
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <div class="form-group<?php echo e($errors->has('kode_tunjangan_id') ? ' has-error' : ''); ?>">
-                            <label for="kode_tunjangan_id" class="col-md-4 control-label">Kode Tunjangan </label>
-
-                        <div class="col-md-6">
-                                <select name="kode_tunjangan_id" class="form-control">
-                                    <option value="">pilih</option>
-                                    <?php $__currentLoopData = $tunjangan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
-                                    <option value="<?php echo e($data->id); ?>"><?php echo e($data->kode_t); ?><option>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
-                                </select>
-
-                                <?php if($errors->has('kode_tunjangan_id')): ?>
-                                    <span class="help-block">
-                                        <strong><?php echo e($errors->first('kode_tunjangan_id')); ?></strong>
-                                    </span>
-                                <?php endif; ?>
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group">
 						<?php echo Form::submit('Save',['class'=>'btn btn-success form-control']); ?>
@@ -60,4 +46,4 @@
 </div>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.appp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

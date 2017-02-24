@@ -130,7 +130,7 @@ class lemburpegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $lembur=Lembur_pegawai::where('id',$id)->first();
+        $lembur=Lembur_pegawai::where('id' , $id)->first();
         if($lembur['kode_lembur_id'] != Request('kode_lembur_id')){
             $roles=[
             'kode_lembur_id'=>'required',

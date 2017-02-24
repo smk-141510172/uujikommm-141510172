@@ -1,3 +1,6 @@
+<?php $__env->startSection('tunjangan'); ?>
+    active
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <h1><center>Tambah Tunjangan</center></h1>
 <div class="container">

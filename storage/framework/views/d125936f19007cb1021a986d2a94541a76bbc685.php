@@ -2,6 +2,52 @@
     active
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
+<h1><center>Pencarian Menurut Pegawai</center></h1>
+ <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-success">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" action="<?php echo e(url('query')); ?>" method="GET"">
+                        <?php echo e(csrf_field()); ?>
+
+
+                        
+
+                        <div class="form-group<?php echo e($errors->has('q') ? ' has-error' : ''); ?>">
+                            <label for="q" class="col-md-4 control-label">Pegawai</label>
+
+                            <div class="col-md-6">
+                                <select name="q" class="form-control">
+                                    <option value="">pilih</option>
+                                    <?php $__currentLoopData = $pegawai; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                                    <option value="<?php echo e($data->id); ?>"><?php echo e($data->nip); ?>&nbsp&nbsp<?php echo e($data->user->name); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
+                                </select>
+
+                                <?php if($errors->has('q')): ?>
+                                    <span class="help-block">
+                                        <strong><?php echo e($errors->first('q')); ?></strong>
+                                    </span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                       
+                        
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-success form-control">
+                                    Cari
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content1'); ?>
 <div class="panel panel-success">
                 <div class="panel-heading"></div>
                 <div class="panel-body">

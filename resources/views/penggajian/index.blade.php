@@ -3,6 +3,51 @@
     active
 @endsection
 @section('content')
+<h1><center>Pencarian Menurut Pegawai</center></h1>
+ <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-success">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" action="{{ url('query') }}" method="GET"">
+                        {{ csrf_field() }}
+
+                        
+
+                        <div class="form-group{{ $errors->has('q') ? ' has-error' : '' }}">
+                            <label for="q" class="col-md-4 control-label">Pegawai</label>
+
+                            <div class="col-md-6">
+                                <select name="q" class="form-control">
+                                    <option value="">pilih</option>
+                                    @foreach($pegawai as $data)
+                                    <option value="{{$data->id}}">{{$data->nip}}&nbsp&nbsp{{$data->user->name}}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('q'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('q') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                       
+                        
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-success form-control">
+                                    Cari
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+@endsection
+@section('content1')
 <div class="panel panel-success">
                 <div class="panel-heading"></div>
                 <div class="panel-body">

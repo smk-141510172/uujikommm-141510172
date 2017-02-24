@@ -17,11 +17,9 @@
 			<?php $__currentLoopData = $tunjanganp; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
 			<tr>
 				<td><?php echo e($no++); ?></td>
-				<td><?php echo e($data->kode_tunjangan_id); ?></td>
+				<td><?php echo e($data->Tunjangan->kode_t); ?></td>
 				<td><?php echo e($data->pegawai->user->name); ?></td>
-				<td>
-					<a href="<?php echo e(route('tunjanganp.edit',$data->id)); ?>" class='btn btn-warning'> Edit </a>
-				</td>
+				
 				<td>
 					<?php echo Form::open(['method'=>'DELETE','route'=>['tunjanganp.destroy',$data->id]]); ?>
 

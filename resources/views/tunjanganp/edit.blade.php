@@ -30,24 +30,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('kode_tunjangan_id') ? ' has-error' : '' }}">
-                            <label for="kode_tunjangan_id" class="col-md-4 control-label">Kode Tunjangan </label>
-
-                        <div class="col-md-6">
-                                <select name="kode_tunjangan_id" class="form-control">
-                                    <option value="">pilih</option>
-                                    @foreach($tunjangan as $data)
-                                    <option value="{{$data->id}}">{{$data->kode_t}}<option>
-                                    @endforeach
-                                </select>
-
-                                @if ($errors->has('kode_tunjangan_id'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('kode_tunjangan_id') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group">
 						{!! Form::submit('Save',['class'=>'btn btn-success form-control']) !!}

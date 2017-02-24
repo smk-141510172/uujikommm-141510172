@@ -2,7 +2,7 @@
     active
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
-<h1>Edit Pegawai</h1>
+<h1><center>Edit Pegawai</center></h1>
 	<div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -168,4 +168,4 @@
 </div>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.appp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
